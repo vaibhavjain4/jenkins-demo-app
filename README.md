@@ -15,3 +15,17 @@ Step 5 : Jenkins - Cluster Configuration
 Step 6 : Jenkins openshift setup test - basic new ruby app pipeline
 
 Step 7 : Jenkins (CI) & OpenShift (CD) Advanced Pipeline
+
+# Step 1 : Download Jenkins
+
+Download Jenkins from http://mirrors.jenkins-ci.org/osx-stable/?C=M;O=D 
+
+For other platform , download jenkins from https://jenkins.io/download/
+
+## Step 2 : Install Jenkins
+
+Start the installer & follow on screen instructions to complete the Jenkins installation.
+
+You will require "System Administrator" access to install Jenkins.
+
+
