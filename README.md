@@ -80,10 +80,10 @@ This step is to configure tools such as java, maven and openshift client (oc) to
 Go to Manage Jenkins -> Global Tool Configuration
 
 <ul>
-  <li><h3>OpenShift Client Tools</h3></li>
+  <li><h4>OpenShift Client Tools</h4></li>
   <br> Click on "Add OpenShift Client Tools"
-  <br> Name : oc
-  <br> Install automatically : checked
+      <br> Name : oc
+      <br> Install automatically : checked
 </ul>  
 
 
