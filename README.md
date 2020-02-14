@@ -177,10 +177,72 @@ Once build has run successful, go and check openshift for new project and applic
 
 ## Step 7 : Advanced Pipeline - Build + Test In External Jenkins & Deploy + Promote In OpenShift
 
+For this pipeline we will use following usecase :
 
+![](Pipeline Overview.png)
 
   ### Step 7a : Openshift configurations : build skeleton
+  
+  Use following commands to build openshift skeleton for Jenkins Pipeline to invoke objects. (Note : This can also be done using pipeline but we are using manual method to explain the concepts and artifacts required.
+  
+  Download and configure oc utility (link given in references section below ) on your local machine/workstation/laptop to execute following command :
+  
+    oc login https://api.cluster-8a3a.sandbox956.opentlc.com:6443
+    
+    #### Create Two Namespaces ####
+    
+    oc new-project my-project-dev
+
+    oc new-project my-project-stage
+
+    #### Create empty build, application, service & route in development environment (project). Disable automatic triggers. ####
+
+    oc new-build --name=microservice-app --image-stream=java:8 --binary=true -n my-project-dev
+
+    oc new-app --name=microservice-app microservice-app:latest --allow-missing-images -l app=microservice-app -n my-project-dev
+
+    oc rollout cancel dc/microservice-app -n my-project-dev
+
+    oc set triggers dc/microservice-app --from-config --remove -n my-project-dev
+
+    oc set triggers dc -l app=microservice-app --containers=microservice-app --from-image=microservice-app:latest --manual -n my-project-dev
+
+    oc expose dc microservice-app --port=8080 -n my-project-dev
+
+    oc expose svc microservice-app -n my-project-dev
+
+    #### Create empty application, service & route in stage environment (project). Disable automatic triggers. ####
+
+    oc new-app --name=microservice-app microservice-app:stage --allow-missing-images -l app=microservice-app -n my-project-stage
+
+    oc rollout cancel dc/microservice-app -n my-project-stage
+
+    oc set triggers dc/microservice-app --from-config --remove -n my-project-stage
+
+    oc set triggers dc -l app=microservice-app --containers=microservice-app --from-image=microservice-app:stage --manual -n my-project-stage
+
+    oc create service clusterip microservice-app --tcp=8080:8080 -n my-project-stage
+
+    oc expose svc microservice-app -n my-project-stage
+
+    #### Create Service Account in Development Project. This account will be used from Jenkins to invoke build etc ####
+
+    oc create sa jenkins -n my-project-dev
+
+    #### Give permissions to service account for editing and deploy applications into dev and stage namespaces/projects. ####
+
+    oc policy add-role-to-user edit system:serviceaccount:my-project-dev:jenkins -n my-project-dev
+
+    oc policy add-role-to-user edit system:serviceaccount:my-project-dev:jenkins -n my-project-stage
+
+    oc policy add-role-to-group system:image-puller system:serviceaccounts:my-project-dev -n my-project-dev
+
+    oc policy add-role-to-group system:image-puller system:serviceaccounts:my-project-stage -n my-project-dev
+    
+
   ### Step 7b : Test configurations : manually using oc commands
+  
+  
   ### Step 7c : Jenkins : Configure openshift cluster details and run pipeline
 
 
