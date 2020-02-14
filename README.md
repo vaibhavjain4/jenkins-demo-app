@@ -73,7 +73,6 @@ Github Documentation Link : https://github.com/openshift/jenkins-client-plugin
   <br>
   <li> Go to Installed Tab (under managed plugins) & confirm openshift plugins are checked </li>
 </ul>
-<br>
 
 ## Step 4 : Configure Jenkins Global Tool Configuration
 
@@ -95,7 +94,6 @@ Go to Manage Jenkins -> Global Tool Configuration
       <li> Subdirectory of extracted archive : Leave empty</li>  
       <li> Click Apply </li>  
       </ul>  
-  <br>
 </ul> 
 <h4> JDK Installations </h4>
 <ul>
@@ -107,7 +105,6 @@ Go to Manage Jenkins -> Global Tool Configuration
       <li> Click Apply </li>
     </ul>
   </ul>
-  <br>
   <h4> Maven Installations </h4>
   <ul> 
     <li> Click on "Add Maven" </li>
@@ -118,13 +115,12 @@ Go to Manage Jenkins -> Global Tool Configuration
         <li> Click Apply & Save </li>
       </ul>  
   </ul>
-  <br>
 
 ## Step 5 : Jenkins Configurations : Configure OpenShift Cluster Details
 
 Go to Manage Jenkins -> Configure System
 
-<h4> OpenShift Client Plugin <h4>
+<h4> OpenShift Client Plugin </h4>
   <ul> 
     <li> Cluster Configurations : Click on "Add OpenShift Cluster" </li>
     <li> Cluster Name : openshift-cluster</li>
@@ -132,7 +128,7 @@ Go to Manage Jenkins -> Configure System
     <li> Disable TLS Verify : checked</li>
     <li> Credentials : Click on "Add"</li>
     <li> Kind : "OpenShift Token for OpenShift Client Plugin"</li>
-    <li> Token : <Paste your token here> (!! Hint - Get token from $oc whoami -t !!)</li>
+    <li> Token : Paste your token here (!! Hint - Get token from $oc whoami -t !!)</li>
     <li> ID : my-user-token</li>
     <li> Click "Add"</li>
     <li> Credentials : Choose from drop down "my-user-token"</li>
