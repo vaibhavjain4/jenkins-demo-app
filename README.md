@@ -51,7 +51,7 @@ OpenShift Client Jenkins Plugin Package Download Link : https://updates.jenkins-
 
 Github Documentation Link : https://github.com/openshift/jenkins-client-plugin
 
-Use following steps to download and configure plugin :
+#### Use following steps to download and configure plugin :
 
 <ul>
   <li> Go to Manage Jenkins </li>
@@ -67,12 +67,24 @@ Use following steps to download and configure plugin :
   <li> Download now and install after restart </li>
   <br>
   <li> Restart Jenkins </li>
+  <br>
+  <li> Go to Installed Tab (under managed plugins) & confirm openshift plugins are checked </li>
 </ul>
+<br>
+<br>
 
+## Step 4 : Configure Jenkins Global Tool Configuration
 
+This step is to configure tools such as java, maven and openshift client (oc) to be used by pipelines. Tools name given under these settings will be called under pipeline tool section.
 
+Go to Manage Jenkins -> Global Tool Configuration
 
-## Step 4 :
+<ul>
+  <li><h3>OpenShift Client Tools</h3></li>
+  <br> Click on "Add OpenShift Client Tools"
+  <br> Name : oc
+  <br> Install automatically : checked
+</ul>  
 
 
 
