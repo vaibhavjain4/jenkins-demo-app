@@ -181,7 +181,8 @@ For this pipeline we will use following usecase :
 
 <img src="https://github.com/vaibhavjain4/jenkins-demo-app/raw/master/Pipeline%20Overview.png" width="800px" />
 
-
+<br>
+<br>
 
 
   ### Step 7a : Openshift configurations : build skeleton
@@ -262,11 +263,11 @@ For this pipeline we will use following usecase :
 
   ### Step 7b : Test configurations : manually using oc commands
   
-  
+  <br>
   
   <b> Pre-requisites : Git, Java 8, Maven & oc should be installed on your local machine to execute following steps </b>
   
-  
+  <br>
   
   <b> Get Service Account 'Jenkins' Token & Login Into OpenShift Using Token </b>
   
@@ -324,9 +325,40 @@ For this pipeline we will use following usecase :
 
     [ Copy the HOST/PORT url into browser to access the deployed application ]
   
+  <br>
+  
   ### Step 7c : Jenkins : Configure openshift cluster details and run pipeline
-
-
+  
+  <h4>(!! IMPORTANT NOTE - Fork a copy of https://github.com/vaibhavjain4/jenkins-demo-app/tree/v1.0 into your git account. Update pom.xml on line number 26 & 30 to your nexus server url. Update AdvancedJenkinsCIOpenShiftCDPipeline.txt file on line  number 34 to your sonarqube server. If Nexus & SonarQube are not available, comment line number 34 & 40 into AdvancedJenkinsCIOpenShiftCDPipeline.txt file.)</h4>
+  
+  <br>
+  Open Jenkins -> New
+  
+  <h4> Configure Jenkins for Advanced Pipeline </h4>
+  
+  <ul>
+    <li> Name : "Jenkins CI OpenShift CD Advanced Pipeline" </li>
+    <li> Select Pipeline & Click "OK" </li>
+    <li> General : Select/Check "This project is parameterised" </li>
+    <li> Click "Add Parameter" : Choose "String Parameter"</li>
+      <ul>
+        <li> Name: GIT_URL </li>
+        <li> Default Value: </li>
+      </ul>  
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
+    <li> </li>
 
 ## Reference URL's for additional information
 
