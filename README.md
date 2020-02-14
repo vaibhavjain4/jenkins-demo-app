@@ -175,7 +175,13 @@ Open Jenkins -> New Item
 
 Once build has run successful, go and check openshift for new project and application to confirm.
 
-## Step 7 :
+## Step 7 : Advanced Pipeline - Build + Test In External Jenkins & Deploy + Promote In OpenShift
+
+
+
+  ### Step 7a : Openshift configurations : build skeleton
+  ### Step 7b : Test configurations : manually using oc commands
+  ### Step 7c : Jenkins : Configure openshift cluster details and run pipeline
 
 
 
