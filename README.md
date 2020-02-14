@@ -336,9 +336,28 @@ For this pipeline we will use following usecase :
 </h4>
   
   <br>
+  <br>
+  Jenkins -> Manage Jenkins
+  <ul>
+    <li> Open Configure System </li>
+    <li> Scroll to "OpenShift Client Plugin" Section </li>
+    <li> Under Cluster Configurations -> OpenShift Cluster : Click on "Add" & Select "Jenkins"</li>
+    <ul>
+      <li>Kind : OpenShift Token for OpenShift Client Plugin</li>
+      <li>Token : Paste Jenkins Service Account Token Value (Hint : oc sa get-token jenkins -n my-project-dev)</li>
+      <li>ID : jenkins-service-account</li>
+      <li>Click on Add</li>
+    </ul>
+    <li> Credentials : Select "jenkins-service-account" from drop down list </li>
+    <li> Click on "Apply" & "Save" </li>
+  </ul>  
+  
+  
+  <br>
+  <h4> Configure Jenkins for Advanced Pipeline </h4>
+  <br>
   Open Jenkins -> New
   
-  <h4> Configure Jenkins for Advanced Pipeline </h4>
   
   <ul>
     <li> Name : "Jenkins CI OpenShift CD Advanced Pipeline" </li>
