@@ -2,6 +2,7 @@
 <br>
 <h2> Recorded Demo : Coming Soon !! </h2>
 <br>
+
 For this setup purpose we are using Jenkins ver. 2.204.2 (on Mac) & OpenShift v4.3 
 
 <br>
@@ -12,6 +13,7 @@ Jenkins openshift client plugin : https://github.com/openshift/jenkins-client-pl
 
 Microservice application source code is hosted under v1.0 & v2.0 branch in this repository.
 
+<br>
 <b>
 
 Step 1 : Download Jenkins
