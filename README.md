@@ -329,7 +329,11 @@ For this pipeline we will use following usecase :
   
   ### Step 7c : Jenkins : Configure openshift cluster details and run pipeline
   
-  <h4>(!! IMPORTANT NOTE - Fork a copy of https://github.com/vaibhavjain4/jenkins-demo-app/tree/v1.0 into your git account. Update pom.xml on line number 26 & 30 to your nexus server url. Update AdvancedJenkinsCIOpenShiftCDPipeline.txt file on line  number 34 to your sonarqube server. If Nexus & SonarQube are not available, comment line number 34 & 40 into AdvancedJenkinsCIOpenShiftCDPipeline.txt file.)</h4>
+  <h4>
+  !! IMPORTANT NOTE - Fork a copy of https://github.com/vaibhavjain4/jenkins-demo-app/tree/v1.0 into your git account. !!
+  <br>Update pom.xml on line number 26 & 30 to your nexus server url. Update AdvancedJenkinsCIOpenShiftCDPipeline.txt file on line  number 34 to your sonarqube server. 
+  <br>If Nexus & SonarQube are not available, comment line number 34 & 40 into AdvancedJenkinsCIOpenShiftCDPipeline.txt file.
+</h4>
   
   <br>
   Open Jenkins -> New
@@ -343,22 +347,39 @@ For this pipeline we will use following usecase :
     <li> Click "Add Parameter" : Choose "String Parameter"</li>
       <ul>
         <li> Name: GIT_URL </li>
-        <li> Default Value: </li>
-      </ul>  
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
-    <li> </li>
+        <li> Default Value: https://github.com/vaibhavjain4/jenkins-demo-app.git [Replace with your forked repo url]</li>
+      </ul> 
+    <li> Click "Add Parameter" : Choose "String Parameter"</li>
+      <ul>
+        <li> Name: GIT_BRANCH </li>
+        <li> Default Value: v1.0 </li>
+      </ul> 
+    <li> Click "Add Parameter" : Choose "String Parameter"</li>
+      <ul>
+        <li> Name: CLUSTER_NAME </li>
+        <li> Default Value: openshift-cluster </li>
+      </ul> 
+    <li> Click "Add Parameter" : Choose "String Parameter"</li>
+      <ul>
+        <li> Name: DEV_ENV </li>
+        <li> Default Value: my-project-dev </li>
+      </ul> 
+    <li> Click "Add Parameter" : Choose "String Parameter"</li>
+      <ul>
+        <li> Name: STAGE_ENV </li>
+        <li> Default Value: my-project-stage </li>
+      </ul> 
+    <li> Pipeline : Paste content from https://github.com/vaibhavjain4/jenkins-demo-app/blob/master/AdvancedJenkinsCIOpenShiftCDPipeline.txt</li>
+    <li> Click Apply & Save</li>
+    <li> Run Pipeline : Click on "Build with Parameters </li>
+    
+<br>
+User approval is required to promote application from development to stage environment. Please click on approve when prompted. Failure of approval will lead to failure of pipeline.
+<br>
+Access the application via routes of development & stage environment route url's.
+<br>
+Run the pipeline again with GIT_BRANCH = v2.0 and notice the change in application version via accessing it browser.
+
 
 ## Reference URL's for additional information
 
