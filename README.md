@@ -331,8 +331,8 @@ For this pipeline we will use following usecase :
   
   <h4>
   !! IMPORTANT NOTE - Fork a copy of https://github.com/vaibhavjain4/jenkins-demo-app/tree/v1.0 into your git account. !!
-  <br>Update pom.xml on line number 26 & 30 to your nexus server url. Update AdvancedJenkinsCIOpenShiftCDPipeline.txt file on line  number 34 to your sonarqube server. 
-  <br>If Nexus & SonarQube are not available, comment line number 34 & 40 into AdvancedJenkinsCIOpenShiftCDPipeline.txt file.
+  <br><br>Update pom.xml on line number 26 & 30 to your nexus server url. Update AdvancedJenkinsCIOpenShiftCDPipeline.txt file on line  number 34 to your sonarqube server. 
+  <br><br>If Nexus & SonarQube are not available, comment line number 34 & 40 into AdvancedJenkinsCIOpenShiftCDPipeline.txt file.
 </h4>
   
   <br>
@@ -373,11 +373,11 @@ For this pipeline we will use following usecase :
     <li> Click Apply & Save</li>
     <li> Run Pipeline : Click on "Build with Parameters </li>
     
-<br>
+<br><br>
 User approval is required to promote application from development to stage environment. Please click on approve when prompted. Failure of approval will lead to failure of pipeline.
-<br>
+<br><br>
 Access the application via routes of development & stage environment route url's.
-<br>
+<br><br>
 Run the pipeline again with GIT_BRANCH = v2.0 and notice the change in application version via accessing it browser.
 
 
