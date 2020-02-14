@@ -20,6 +20,11 @@ Step 6 : Jenkins openshift setup test - basic new ruby app pipeline
 
 Step 7 : Jenkins (CI) & OpenShift (CD) Advanced Pipeline
 
+<ol type="a">
+  <li> Openshift configurations : build skeleton </li>
+  <li> Test configurations : manually using oc commands </li>
+  <li> Jenkins : Configure openshift cluster details and run pipeline </li>
+<ol>
 </b>
 
 ## Step 1 : Download Jenkins
