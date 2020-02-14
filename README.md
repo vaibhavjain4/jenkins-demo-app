@@ -189,17 +189,17 @@ For this pipeline we will use following usecase :
   
     oc login https://api.cluster-8a3a.sandbox956.opentlc.com:6443
     
-    <br>
-    <b>
+ <br>
+ <b>
     #### Create Two Namespaces ####
-    </b>
+ </b>
     oc new-project my-project-dev
 
     oc new-project my-project-stage
-    <br>
-    <b>
+ <br>
+ <b>
     #### Create empty build, application, service & route in development environment (project). Disable automatic triggers. ####
-    </b>
+ </b>
     oc new-build --name=microservice-app --image-stream=java:8 --binary=true -n my-project-dev
 
     oc new-app --name=microservice-app microservice-app:latest --allow-missing-images -l app=microservice-app -n my-project-dev
