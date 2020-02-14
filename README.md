@@ -179,7 +179,7 @@ Once build has run successful, go and check openshift for new project and applic
 
 For this pipeline we will use following usecase :
 
-![](Pipeline Overview.png)
+<img src="https://github.com/vaibhavjain4/jenkins-demo-app/raw/master/Pipeline%20Overview.png" width="800px" />
 
   ### Step 7a : Openshift configurations : build skeleton
   
@@ -189,14 +189,17 @@ For this pipeline we will use following usecase :
   
     oc login https://api.cluster-8a3a.sandbox956.opentlc.com:6443
     
+    <br>
+    <b>
     #### Create Two Namespaces ####
-    
+    </b>
     oc new-project my-project-dev
 
     oc new-project my-project-stage
-
+    <br>
+    <b>
     #### Create empty build, application, service & route in development environment (project). Disable automatic triggers. ####
-
+    </b>
     oc new-build --name=microservice-app --image-stream=java:8 --binary=true -n my-project-dev
 
     oc new-app --name=microservice-app microservice-app:latest --allow-missing-images -l app=microservice-app -n my-project-dev
@@ -210,9 +213,10 @@ For this pipeline we will use following usecase :
     oc expose dc microservice-app --port=8080 -n my-project-dev
 
     oc expose svc microservice-app -n my-project-dev
-
+    <br>
+    <b>
     #### Create empty application, service & route in stage environment (project). Disable automatic triggers. ####
-
+    </b>
     oc new-app --name=microservice-app microservice-app:stage --allow-missing-images -l app=microservice-app -n my-project-stage
 
     oc rollout cancel dc/microservice-app -n my-project-stage
@@ -224,13 +228,15 @@ For this pipeline we will use following usecase :
     oc create service clusterip microservice-app --tcp=8080:8080 -n my-project-stage
 
     oc expose svc microservice-app -n my-project-stage
-
+    <br>
+    <b>
     #### Create Service Account in Development Project. This account will be used from Jenkins to invoke build etc ####
-
+    </b>
     oc create sa jenkins -n my-project-dev
-
+    <br>
+    <b>
     #### Give permissions to service account for editing and deploy applications into dev and stage namespaces/projects. ####
-
+    </b>
     oc policy add-role-to-user edit system:serviceaccount:my-project-dev:jenkins -n my-project-dev
 
     oc policy add-role-to-user edit system:serviceaccount:my-project-dev:jenkins -n my-project-stage
