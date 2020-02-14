@@ -186,12 +186,16 @@ For this pipeline we will use following usecase :
   Use following commands to build openshift skeleton for Jenkins Pipeline to invoke objects. (Note : This can also be done using pipeline but we are using manual method to explain the concepts and artifacts required.
   
   Download and configure oc utility (link given in references section below ) on your local machine/workstation/laptop to execute following command :
+ <br>
+ <b>
+    Login into OpenShift Cluster 
+ </b>
   
     oc login https://api.cluster-8a3a.sandbox956.opentlc.com:6443
     
  <br>
  <b>
-    #### Create Two Namespaces ####
+    Create Two Namespaces
  </b>
     
     oc new-project my-project-dev
@@ -199,7 +203,7 @@ For this pipeline we will use following usecase :
     oc new-project my-project-stage
  <br>
  <b>
-    #### Create empty build, application, service & route in development environment (project). Disable automatic triggers. ####
+    Create empty build, application, service & route in development environment (project). Disable automatic triggers.
  </b>
     
     oc new-build --name=microservice-app --image-stream=java:8 --binary=true -n my-project-dev
@@ -217,7 +221,7 @@ For this pipeline we will use following usecase :
     oc expose svc microservice-app -n my-project-dev
   <br>
   <b>
-    #### Create empty application, service & route in stage environment (project). Disable automatic triggers. ####
+    Create empty application, service & route in stage environment (project). Disable automatic triggers.
   </b>
     
     oc new-app --name=microservice-app microservice-app:stage --allow-missing-images -l app=microservice-app -n my-project-stage
@@ -233,13 +237,13 @@ For this pipeline we will use following usecase :
     oc expose svc microservice-app -n my-project-stage
    <br>
    <b>
-    #### Create Service Account in Development Project. This account will be used from Jenkins to invoke build etc ####
+    Create Service Account in Development Project. This account will be used from Jenkins to invoke build etc
    </b>
     
     oc create sa jenkins -n my-project-dev
    <br>
    <b>
-    #### Give permissions to service account for editing and deploy applications into dev and stage namespaces/projects. ####
+    Give permissions to service account for editing and deploy applications into dev and stage namespaces/projects.
    </b>
     
     oc policy add-role-to-user edit system:serviceaccount:my-project-dev:jenkins -n my-project-dev
