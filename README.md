@@ -259,6 +259,63 @@ For this pipeline we will use following usecase :
 
   ### Step 7b : Test configurations : manually using oc commands
   
+  <b> Pre-requisites : Git, Java 8, Maven & oc should be installed on your local machine to execute following steps </b>
+  
+  <b> Get Service Account 'Jenkins' Token & Login Into OpenShift Using Token </b>
+  
+    TOKEN=`oc sa get-token jenkins -n my-project-dev`
+
+    oc login --token=$TOKEN --server=https://api.cluster-8a3a.sandbox956.opentlc.com:6443
+
+  
+  <b> Clone Microservice App Source Code on your local machine </b>
+
+    git clone https://github.com/vaibhavjain4/jenkins-demo-app.git -b v1.0
+  
+    cd jenkins-demo-app/
+  
+    mvn package
+  
+    [ STOP Jenkins to start and test application ]
+  
+    java -jar target/microservice-app-1.0.0-SNAPSHOT.jar
+    
+    [ Open browser and test http://localhost:8080 ]
+    
+  
+  <b> Deploy above build jar file into openshift using S2I binary method </b>
+
+    oc start-build microservice-app --from-file=target/microservice-app-1.0.0-SNAPSHOT.jar --follow --wait -n my-project-dev
+
+  <b> Deploy the application into Development Project </b>
+
+    oc rollout latest microservice-app -n my-project-dev
+
+  <b> Promote & Deploy the application into Stage Project </b>
+    
+    oc tag my-project-dev/microservice-app:latest my-project-stage/microservice-app:stage
+
+    oc rollout latest microservice-app -n my-project-stage
+  
+  <b> Following command can help to check the status </b>
+    
+    oc get bc -n my-project-dev
+
+    oc get is -n my-project-dev
+
+    oc get dc -n my-project-dev
+
+    oc get pods -n my-project-dev
+
+    oc get route -n my-project-dev
+
+    [ Copy the HOST/PORT url into browser to access the deployed application ]
+
+    oc get pods -n my-project-stage
+
+    oc get route -n my-project-stage
+
+    [ Copy the HOST/PORT url into browser to access the deployed application ]
   
   ### Step 7c : Jenkins : Configure openshift cluster details and run pipeline
 
