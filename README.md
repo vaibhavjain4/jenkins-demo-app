@@ -74,7 +74,6 @@ Github Documentation Link : https://github.com/openshift/jenkins-client-plugin
   <li> Go to Installed Tab (under managed plugins) & confirm openshift plugins are checked </li>
 </ul>
 <br>
-<br>
 
 ## Step 4 : Configure Jenkins Global Tool Configuration
 
@@ -123,8 +122,22 @@ Go to Manage Jenkins -> Global Tool Configuration
 
 ## Step 5 : Jenkins Configurations : Configure OpenShift Cluster Details
 
+Go to Manage Jenkins -> Configure System
 
-
+<h4> OpenShift Client Plugin <h4>
+  <ul> 
+    <li> Cluster Configurations : Click on "Add OpenShift Cluster" </li>
+    <li> Cluster Name : openshift-cluster</li>
+    <li> API Server URL : https://api.cluster-8a3a.sandbox956.opentlc.com:6443 (!! Important - Change this to your url !!)</li>
+    <li> Disable TLS Verify : checked</li>
+    <li> Credentials : Click on "Add"</li>
+    <li> Kind : "OpenShift Token for OpenShift Client Plugin"</li>
+    <li> Token : <Paste your token here> (!! Hint - Get token from $oc whoami -t !!)</li>
+    <li> ID : my-user-token</li>
+    <li> Click "Add"</li>
+    <li> Credentials : Choose from drop down "my-user-token"</li>
+    <li> Click on Apply & Save</li>
+  </ul>
 
 
 ## Step 6:
