@@ -79,11 +79,20 @@ This step is to configure tools such as java, maven and openshift client (oc) to
 
 Go to Manage Jenkins -> Global Tool Configuration
 
+
+<h4>OpenShift Client Tools</h4>
 <ul>
-  <li><h4>OpenShift Client Tools</h4></li>
-  <br> Click on "Add OpenShift Client Tools"
-      <br> Name : oc
-      <br> Install automatically : checked
+  <li>Click on "Add OpenShift Client Tools"</li>
+      <ul>
+      <li> Name : oc </li>
+      <li> Install automatically : checked </li>
+      <li> Click on "Add OpenShift Client Tools </li>  
+      <li> Choose "Extract *.zip/*.tar.gz"</li>
+      <li> Label : Leave empty</li>
+      <li> Download URL for binary archive : https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/macosx/oc.tar.gz  ( !! Important - Use the oc url as per your architecture !!)</li>
+      <li> Subdirectory of extracted archive : Leave empty</li>  
+      <li> Click Apply </li>  
+      </ul>  
 </ul>  
 
 
