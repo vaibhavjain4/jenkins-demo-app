@@ -35,9 +35,11 @@ Start the installer & follow on screen instructions to complete the Jenkins inst
 You will require "System Administrator" access to install Jenkins.
 
   <ul>
-  <li> Copy the value from /Users/Shared/Jenkins/Home/secrets/initialAdminPassword and paste as Administrator Password during the installation when asked.</li>
-  
+  <li> Copy the string from /Users/Shared/Jenkins/Home/secrets/initialAdminPassword and paste as administrator password during the installation when asked.</li>
+  <br>
   <li> Choose option : "Install suggested plugins" </li>
+  <br/>
+  <li> Create an admin user as per your preference </li>
   </ul>
   
   
