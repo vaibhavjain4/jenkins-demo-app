@@ -136,9 +136,44 @@ Go to Manage Jenkins -> Configure System
   </ul>
 
 
-## Step 6:
+## Step 6: Jenkins - OpenShift Cluster Configuration Test - New Ruby App Pipeline
 
+Let's create a new pipeline in Jenkins to test above done configurations. This pipeline will use parameters to capture namespace and openshift cluster name (as configured above earlier). 
 
+A new project/namespace will be created in openshift (so make sure it doesn't exist) and new ruby app will be created using S2I method (code pull from github).
+
+Open Jenkins -> New Item
+
+<h4> Create New Pipeline </h4>
+<ul>
+  <li> Enter an item name : OpenShift Setup Test Pipeline </li>
+  <li> Select "Pipeline" & Click "OK" </li>
+  <li> Under General : Check / Select "This project is parameterized" </li>
+  <li> Click on "Add Parameter" & Choose "String Parameter" </li>
+      <ul>
+        <li> Name : PROJECT_NAME</li>
+      </ul>  
+  <li> Click on "Add Parameter" & Choose "String Parameter" </li>
+      <ul>
+        <li> Name : CLUSTER_NAME</li>
+        <li> Default Value : openshift-cluster (!! Important - This should match with earlier defined cluster name !!)
+      </ul>
+  <li> Pipeline </li>
+      <ul>
+        <li> Script : Paste content from https://github.com/vaibhavjain4/jenkins-demo-app/blob/master/JenkinsOpenShiftConfigurationTestPipeline.txt </li>
+      </ul>
+  <li> Click on Apply & Save </li>
+</ul>
+
+<h4> Run the pipeline </h4>
+<ul>  
+  <li> Click on Build with Parameters </li>
+  <li> PROJECT_NAME : jenkins-setup-test </li>
+  <li> CLUSTER_NAME : openshift-cluster </li>
+  <li> Click on "Build" </li>
+</ul>  
+
+Once build has run successful, go and check openshift for new project and application to confirm.
 
 ## Step 7 :
 
