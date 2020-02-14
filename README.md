@@ -186,7 +186,8 @@ For this pipeline we will use following usecase :
   Use following commands to build openshift skeleton for Jenkins Pipeline to invoke objects. (Note : This can also be done using pipeline but we are using manual method to explain the concepts and artifacts required.
   
   Download and configure oc utility (link given in references section below ) on your local machine/workstation/laptop to execute following command :
- <br>
+ 
+ <br/>
  <b>
     Login into OpenShift Cluster 
  </b>
@@ -254,6 +255,7 @@ For this pipeline we will use following usecase :
 
     oc policy add-role-to-group system:image-puller system:serviceaccounts:my-project-stage -n my-project-dev
     
+<br/>
 
   ### Step 7b : Test configurations : manually using oc commands
   
