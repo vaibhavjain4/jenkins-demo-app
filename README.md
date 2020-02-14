@@ -93,11 +93,34 @@ Go to Manage Jenkins -> Global Tool Configuration
       <li> Subdirectory of extracted archive : Leave empty</li>  
       <li> Click Apply </li>  
       </ul>  
-</ul>  
+  <br>
+</ul> 
+<h4> JDK Installations </h4>
+<ul>
+  <li> Click on "Add JDK" </li>
+    <ul>
+      <li>Name : jdk8</li>
+      <li> Install Automatically : uncheck </li>
+      <li> JAVA_HOME : /Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home/ (!! Important - Change this to your installation directory location !!) </li>
+      <li> Click Apply </li>
+    </ul>
+  </ul>
+  <br>
+  <h4> Maven Installations </h4>
+  <ul> 
+    <li> Click on "Add Maven" </li>
+      <ul>
+        <li> Name : maven-3.6.3 </li>
+        <li> Install automatically : checked </li>
+        <li> Install from Apache Version : 3.6.3 </li>
+        <li> Click Apply & Save </li>
+      </ul>  
+  </ul>
+  <br>
+
+## Step 5 : Jenkins Configurations : Configure OpenShift Cluster Details
 
 
-
-## Step 5 :
 
 
 
