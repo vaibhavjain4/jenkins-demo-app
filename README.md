@@ -181,6 +181,9 @@ For this pipeline we will use following usecase :
 
 <img src="https://github.com/vaibhavjain4/jenkins-demo-app/raw/master/Pipeline%20Overview.png" width="800px" />
 
+
+
+
   ### Step 7a : Openshift configurations : build skeleton
   
   Use following commands to build openshift skeleton for Jenkins Pipeline to invoke objects. (Note : This can also be done using pipeline but we are using manual method to explain the concepts and artifacts required.
@@ -259,7 +262,11 @@ For this pipeline we will use following usecase :
 
   ### Step 7b : Test configurations : manually using oc commands
   
+  
+  
   <b> Pre-requisites : Git, Java 8, Maven & oc should be installed on your local machine to execute following steps </b>
+  
+  
   
   <b> Get Service Account 'Jenkins' Token & Login Into OpenShift Using Token </b>
   
