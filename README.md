@@ -43,7 +43,32 @@ You will require "System Administrator" access to install Jenkins.
   </ul>
   
   
-## Step 3 :
+## Step 3 : Install Jenkins - OpenShift Client Plugin 
+
+Enable OpenShift Client Jenkins Plugin : https://plugins.jenkins.io/openshift-client/
+
+OpenShift Client Jenkins Plugin Package Download Link : https://updates.jenkins-ci.org/download/plugins/openshift-client/
+
+Github Documentation Link : https://github.com/openshift/jenkins-client-plugin
+
+Use following steps to download and configure plugin :
+
+<ul>
+  <li> Go to Manage Jenkins </li>
+  <br>
+  <li> Choose Manage Plugins </li>
+  <br>
+  <li> Click on Available Tab </li>
+  <br>
+  <li> Use Filter for search "Openshift" </li>
+  <br>
+  <li> Select "OpenShift Client", "OpenShift Login", "OpenShift Sync" Plugins </li>
+  <br>
+  <li> Download now and install after restart </li>
+  <br>
+  <li> Restart Jenkins </li>
+</ul>
+
 
 
 
