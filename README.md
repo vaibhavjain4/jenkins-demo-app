@@ -239,6 +239,8 @@ For this pipeline we will use following usecase :
     oc expose dc microservice-app --port=8080 -n my-project-dev
 
     oc expose svc microservice-app -n my-project-dev
+    
+    oc set triggers dc/microservice-app --all -n my-project-dev
   <br>
   <b>
     Create empty application, service & route in stage environment (project). Disable automatic triggers.
@@ -255,6 +257,8 @@ For this pipeline we will use following usecase :
     oc create service clusterip microservice-app --tcp=8080:8080 -n my-project-stage
 
     oc expose svc microservice-app -n my-project-stage
+    
+    oc set triggers dc/microservice-app --all -n my-project-stage
    <br>
    <b>
     Create Service Account in Development Project. This account will be used from Jenkins to invoke build etc
