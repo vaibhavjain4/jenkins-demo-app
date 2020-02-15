@@ -11,7 +11,7 @@ Jenkins openshift client plugin : https://github.com/openshift/jenkins-client-pl
 
 <br>
 
-Microservice application source code is hosted under v1.0 & v2.0 branch in this repository.
+Microservice application source code is hosted under v1.0 & v2.0 branch in this repository. Prebuilt application Jar files are hosted under appjars branch.
 
 <br>
 
