@@ -1,6 +1,6 @@
 # External Jenkins (CI) Integration with OpenShift (CD) 
 <br>
-<h2> Recorded Demo : Coming Soon !! </h2>
+<h2> Recorded Demo : https://youtu.be/XmLg8cntPuk </h2>
 <br>
 
 For this setup purpose we are using Jenkins ver. 2.204.2 (on Mac) & OpenShift v4.3 
